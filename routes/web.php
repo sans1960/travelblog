@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\DestinationController;
 use App\Http\Controllers\Admin\ImageDestinationController;
 use App\Http\Controllers\Admin\SubregionController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\CountryController;
 
 
 
@@ -21,3 +22,7 @@ Route::resource('admin/destinations',DestinationController::class)->middleware('
 Route::resource('admin/imagedestinations',ImageDestinationController::class)->middleware('auth')->names('admin.imagedestinations');
 Route::resource('admin/subregions',SubregionController::class)->middleware('auth')->names('admin.subregions');
 Route::resource('admin/categories',CategoryController::class)->middleware('auth')->names('admin.categories');
+Route::resource('admin/countries',CountryController::class)->middleware('auth')->names('admin.countries');
+
+
+Route::get('get-subregions',[CountryController::class,'getSubregions'])->name('getsubregions');

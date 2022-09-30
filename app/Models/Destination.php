@@ -20,4 +20,7 @@ class Destination extends Model
     public function subregion(){
         return $this->hasMany(Subregion::class);
     }
+    public function country(){
+        return $this->hasMany(Country::class);
+    }
 }

@@ -17,7 +17,7 @@ class DestinationController extends Controller
      */
     public function index()
     {
-        $destinations = Destination::all();
+        $destinations = Destination::paginate(8);
         return view('admin.destinations.index',compact('destinations'));
     }
 

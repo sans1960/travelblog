@@ -17,7 +17,7 @@ class SubregionController extends Controller
      */
     public function index()
     {
-        $subregions = Subregion::all();
+        $subregions = Subregion::paginate(8);
         return view('admin.subregions.index',compact('subregions'));
     }
 

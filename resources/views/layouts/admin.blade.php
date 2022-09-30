@@ -54,6 +54,11 @@
                                     {{ __('Subregions') }}
                                 </a>
                               </li>
+                              <li>
+                                <a class="nav-link" href="{{ route('admin.countries.index')}}">
+                                    {{ __('Countries') }}
+                                </a>
+                              </li>
                             </ul>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('admin.categories.index')}}">
