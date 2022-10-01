@@ -10,9 +10,18 @@ use App\Http\Controllers\Admin\CountryController;
 
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
+use App\Http\Controllers\FrontController;
+
+
+
+
+
+
+
+
+
+
+Route::get('/', [FrontController::class,'index'])->name('welcome');
 
 Auth::routes();
 
