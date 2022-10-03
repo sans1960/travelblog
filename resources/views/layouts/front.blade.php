@@ -15,6 +15,7 @@
 
    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css')}}">
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+   @yield('estilo')
 </head>
 <body>
     <div class="bg-dark d-flex justify-content-center p-2">
