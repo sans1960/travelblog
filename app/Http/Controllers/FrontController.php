@@ -11,4 +11,7 @@ class FrontController extends Controller
         $destinations = Destination::all();
         return view('frontend.index',compact('destinations'));
     }
+    public function destination(Destination $destination){
+        return view('frontend.destination',compact('destination'));
+    }
 }
