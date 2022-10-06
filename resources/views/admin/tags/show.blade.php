@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 @section('title')
-{{ __('Category-Show') }}
+{{ __('Tag-Show') }}
 @endsection
 @section('content')
 
@@ -19,8 +19,8 @@
                 </thead>
                 <tbody>
                    <tr>
-                    <td>{{ $category->id}}</td>
-                    <td>{{ $category->name}}</td>
+                    <td>{{ $tag->id}}</td>
+                    <td>{{ $tag->name}}</td>
                     
                    </tr>
                 </tbody>

@@ -60,37 +60,41 @@
                                 </a>
                               </li>
                             </ul>
+                        </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('admin.categories.index')}}">
                                     {{ __('Categories') }}
                                 </a>
                               </li>
-                          </li>
+                         
+                              <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                  Blog
+                                </a>
+                                <ul class="dropdown-menu">
+                                  <li><a class="nav-link" href="{{ route('admin.tags.index')}}">
+                                    {{ __('Tags') }}
+                                </a>
+                              </li>
+                                  <li> <a class="nav-link" href="{{ route('admin.pages.index')}}">
+                                    {{ __('Pages') }}
+                                </a></li>
+                                  
+                                  <li>
+                                    <a class="nav-link" href="">
+                                        
+                                    </a>
+                                  </li>
+                                  <li>
+                                    <a class="nav-link" href="">
+                                        
+                                    </a>
+                                  </li>
+                                </ul>
+                            </li
+                    </ul>
+
                     
-                    </ul>
-
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ms-auto">
-                        <!-- Authentication Links -->
-                        @guest
-                            @if (Route::has('login'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                                </li>
-                            @endif
-
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
-                            @endif
-                        @else
-                            <li class="nav-item ">
-                                {{ Auth::user()->name }}
-
-                            </li>
-                        @endguest
-                    </ul>
                 </div>
             </div>
         </nav>
