@@ -3,8 +3,7 @@
     {{ $destination->name}}
 @endsection
 @section('estilo')
-<link rel="stylesheet" href="{{ asset('css/owl.theme.default.min.css') }}">
-<link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css') }}">
+
     
 @endsection
 @section('content')
@@ -59,8 +58,7 @@
     </div>
 @endsection
 @section('js')
-<script src="{{ asset('js/jquery.js') }}"></script>
-<script src="{{ asset('js/owl.carousel.min.js') }}"></script>
+
 <script>
      $('.owl-carousel').owlCarousel({
     loop:true,

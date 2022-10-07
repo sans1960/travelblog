@@ -116,4 +116,53 @@
     
         </div>
     </div>
+    <div class="container mt-5">
+      <h2 class="text-center">Travel Blog</h2>
+      <div class="row">
+        <div class="col-md-6 mx-auto owl-carousel owl-theme">
+          @foreach ($pages as $page)
+          <a href="" class="nav-link">
+            <div class="card">
+              <img src="{{ asset('storage/page/'.$page->image)}}" class="card-img-top" alt=".{{ $page->caption}}">
+             <div class="card-body">
+               <h6 class="card-title">{{ $page->date}}</h6>
+               <h5 class="card-title">{{ $page->name}}</h5>
+                 <div>
+                  {!! Str::limit($page->description, 110, '...') !!}
+                 </div>
+                 <p>Read more</p>
+               </div>
+          </div>
+          </a>
+             
+              
+          @endforeach
+
+      </div>
+      </div>
+    </div>
+@endsection
+@section('js')
+<script>
+  $('.owl-carousel').owlCarousel({
+ loop:true,
+ margin:10,
+ responsiveClass:true,
+ responsive:{
+     0:{
+         items:1,
+         nav:true
+     },
+     600:{
+         items:2,
+         nav:false
+     },
+     1000:{
+         items:4,
+         nav:true,
+         loop:false
+     }
+ }
+})
+</script>
 @endsection
