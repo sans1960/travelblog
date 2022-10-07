@@ -81,8 +81,8 @@
                                 </a></li>
                                   
                                   <li>
-                                    <a class="nav-link" href="">
-                                        
+                                    <a class="nav-link" href="{{ route('admin.articles.index')}}">
+                                      {{ __('Articles') }}
                                     </a>
                                   </li>
                                   <li>

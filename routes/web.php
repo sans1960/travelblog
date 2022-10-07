@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\CountryController;
 use App\Http\Controllers\Admin\TagController;
 use App\Http\Controllers\Admin\PageController;
+use App\Http\Controllers\Admin\ArticleController;
 
 
 
@@ -37,6 +38,7 @@ Route::resource('admin/categories',CategoryController::class)->middleware('auth'
 Route::resource('admin/countries',CountryController::class)->middleware('auth')->names('admin.countries');
 Route::resource('admin/tags',TagController::class)->middleware('auth')->names('admin.tags');
 Route::resource('admin/pages',PageController::class)->middleware('auth')->names('admin.pages');
+Route::resource('admin/articles',ArticleController::class)->middleware('auth')->names('admin.articles');
 
 
 Route::get('get-subregions',[CountryController::class,'getSubregions'])->name('getsubregions');
