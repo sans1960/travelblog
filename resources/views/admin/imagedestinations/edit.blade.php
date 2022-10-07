@@ -47,7 +47,7 @@
                         <div class="row mb-3">
                             <div class="col-md-4 mx-auto">
                             <button type="submit" class="btn btn-primary d-block mx-auto"> 
-                              <i class="bi bi-check-circle"></i>
+                              <i class="bi bi-upload"></i>
                               </button>
                         </div>
                         </div>

@@ -69,9 +69,9 @@ class PageController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Page $page)
     {
-        //
+        return view('admin.pages.show',compact('page'));
     }
 
     /**
@@ -80,9 +80,10 @@ class PageController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Page $page)
     {
-        //
+        $tags = Tag::all();
+        return view('admin.pages.edit',compact('tags','page'));
     }
 
     /**
@@ -92,9 +93,31 @@ class PageController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Page $page)
     {
-        //
+        $request->validate([
+            'name'=>'required',
+            'tag_id'=>'required',
+            'caption'=>'required',
+            'description' => 'required',
+            'conclusion' => 'required',
+            'image' => 'required',
+            'date' => 'required'
+        ]); 
+        if($request->hasFile('image')){
+            unlink(storage_path('app/public/page/'.$page->image));
+            $request->image->store('page', 'public');
+            $page->image = $request->image->hashName();
+        }
+        $page->name = $request->name;
+        $page->slug = Str::slug($request->name);
+        $page->description = $request->description;
+        $page->conclusion = $request->conclusion;
+        $page->caption = $request->caption;
+        $page->date = $request->date;
+        $page->tag_id = $request->tag_id;
+        $page->update();
+        return redirect()->route('admin.pages.index')->with('message','Page Updated') ;
     }
 
     /**
@@ -103,8 +126,13 @@ class PageController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Page $page)
     {
-        //
+        if(file_exists(storage_path('app/public/page/'.$page->image))){
+            unlink(storage_path('app/public/page/'.$page->image));
+
+        }
+        $page->delete();
+        return redirect()->route('admin.pages.index')->with('message','Page Deleted');
     }
 }

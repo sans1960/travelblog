@@ -21,7 +21,7 @@
                        
                           <div class="mb-3 d-flex justify-content-center">
                             <button type="submit" class="btn btn-outline-dark">
-                                <i class="bi bi-check-circle"></i>
+                              <i class="bi bi-upload"></i>
                             </button>
                           </div>
                     </form>
