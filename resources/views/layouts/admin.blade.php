@@ -92,6 +92,11 @@
                                   </li>
                                 </ul>
                             </li
+                            <li class="nav-item">
+                              <a class="nav-link" href="{{ route('admin.sights.index')}}">
+                                  {{ __('Sights') }}
+                              </a>
+                            </li>
                     </ul>
 
                     

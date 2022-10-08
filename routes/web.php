@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\CountryController;
 use App\Http\Controllers\Admin\TagController;
 use App\Http\Controllers\Admin\PageController;
 use App\Http\Controllers\Admin\ArticleController;
+use App\Http\Controllers\Admin\SightController;
 
 
 
@@ -40,6 +41,8 @@ Route::resource('admin/countries',CountryController::class)->middleware('auth')-
 Route::resource('admin/tags',TagController::class)->middleware('auth')->names('admin.tags');
 Route::resource('admin/pages',PageController::class)->middleware('auth')->names('admin.pages');
 Route::resource('admin/articles',ArticleController::class)->middleware('auth')->names('admin.articles');
+Route::resource('admin/sights',SightController::class)->middleware('auth')->names('admin.sights');
 
 
 Route::get('get-subregions',[CountryController::class,'getSubregions'])->name('getsubregions');
+Route::get('get-countries',[CountryController::class,'getCountries'])->name('getcountries');

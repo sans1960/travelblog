@@ -136,6 +136,12 @@ class CountryController extends Controller
         return response()->json($subregions);
     }
     }
+    public function getCountries(Request $request){
+        $countries = Country::where('subregion_id',$request->subregion_id)->orderBy('name')->get();
+        if (count($countries) > 0) {
+            return response()->json($countries);
+        }
+    }
 }
 
 

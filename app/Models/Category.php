@@ -12,4 +12,7 @@ class Category extends Model
     public function getRouteKeyName(){
         return 'slug';
     }
+    public function sight(){
+        return $this->hasMany(Sight::class);
+    }
 }
