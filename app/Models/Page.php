@@ -19,6 +19,6 @@ class Page extends Model
         return $this->belongsTo(Tag::class);
     }
     public function article(){
-        return $this->hasMany(Article::class);
+        return $this->hasMany(Article::class)->orderBy('order');
     }
 }

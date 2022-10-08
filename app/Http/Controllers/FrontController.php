@@ -16,4 +16,7 @@ class FrontController extends Controller
     public function destination(Destination $destination){
         return view('frontend.destination',compact('destination'));
     }
+    public function page(Page $page){
+        return view('frontend.page',compact('page'));
+    }
 }

@@ -121,7 +121,7 @@
       <div class="row">
         <div class="col-md-6 mx-auto owl-carousel owl-theme">
           @foreach ($pages as $page)
-          <a href="" class="nav-link">
+          <a href="{{ route('page',$page)}}" class="nav-link">
             <div class="card">
               <img src="{{ asset('storage/page/'.$page->image)}}" class="card-img-top" alt=".{{ $page->caption}}">
              <div class="card-body">
