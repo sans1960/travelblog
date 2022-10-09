@@ -18,7 +18,8 @@ class SightController extends Controller
      */
     public function index()
     {
-        return view('admin.sights.index');
+        $sights = Sight::all();
+        return view('admin.sights.index',compact('sights'));
     }
 
     /**
@@ -41,7 +42,39 @@ class SightController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            
+            'title' => 'required',
+            'extract' => 'required',
+            'body' => 'required',
+            'date' => 'required',
+            'destination_id' => 'required',
+            'subregion_id' => 'required',
+            'country_id' => 'required',
+            'category_id' => 'required',
+            'image' => 'required',
+            'caption' => 'required',
+            'latitud' => 'required',
+            'longitud' => 'required',
+        ]);
+        $request->image->store('sights', 'public');
+        $sight = new Sight();
+        $sight->title = $request->title;
+        $sight->image = $request->image->hashName();
+        $sight->slug = Str::slug($request->title);
+        $sight->extract = $request->extract;
+        $sight->body = $request->body;
+        $sight->date = $request->date;
+        $sight->destination_id = $request->destination_id;
+        $sight->subregion_id = $request->subregion_id;
+        $sight->country_id = $request->country_id;
+        $sight->category_id = $request->category_id;
+        $sight->caption = $request->caption;
+        $sight->latitud = $request->latitud;
+        $sight->longitud = $request->longitud;
+        $sight->zoom = $request->zoom;
+        $sight->save();
+        return redirect()->route('admin.sights.index')->with('message','Sight Created') ;
     }
 
     /**
@@ -50,9 +83,9 @@ class SightController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Sight $sight)
     {
-        return view('admin.sights.show');
+        return view('admin.sights.show',compact('sight'));
     }
 
     /**

@@ -13,7 +13,7 @@
                    Create Sight
                 </div>
                 <div class="card-body">
-                    <form action="" method="post" enctype="multipart/form-data">
+                    <form action="{{ route('admin.sights.store')}}" method="post" enctype="multipart/form-data">
                         @csrf
                        
                           <div class="mb-3">
@@ -72,7 +72,7 @@
                             </div>
                             <div class="col">
                                 
-                                <input type="number" class="form-control"  name="zoom" placeholder="Zoom" required>
+                                <input type="number" class="form-control"  name="zoom" placeholder="Zoom" >
                             </div>
                           
                           </div>

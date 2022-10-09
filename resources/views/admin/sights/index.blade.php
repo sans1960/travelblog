@@ -49,14 +49,16 @@
                     </tr>
                 </thead>
                 <tbody>
-                 
+                     @foreach ($sights as $sight)
+                         
+                    
                     <tr>
-                        <td></td>
-                        <td></td>
+                        <td>{{ $sight->date}}</td>
+                        <td>{{ $sight->title}}</td>
                         
-                        <td></td>
+                        <td>{{ $sight->country->name}}</td>
                         <td>
-                            <a href="" class="btn btn-success btn-sm">
+                            <a href="{{ route('admin.sights.show',$sight)}}" class="btn btn-success btn-sm">
                                 <i class="bi bi-eye"></i>
                                 </a>
                         </td>
@@ -75,7 +77,7 @@
                             </form>
                         </td>
                     </tr>
-                
+                    @endforeach
                 </tbody>
             </table>
            
