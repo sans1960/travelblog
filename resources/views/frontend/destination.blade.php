@@ -55,7 +55,29 @@
     </div>
     <div class="container mt-5">
         <h1 class="text-center">Sights from {{ $destination->name}}</h1>
+        <div class="row mt-5">
+            <div class="col-md-6 mx-auto owl-carousel owl-theme">
+                @foreach ($sights as $sight)
+                <a href="{{ route('sight',$sight)}}" class="nav-link">
+                    <div class="card">
+                      <img src="{{ asset('storage/sights/'.$sight->image)}}" class="card-img-top" alt=".{{ $sight->caption}}">
+                     <div class="card-body">
+                       <h6 class="card-title">{{ $sight->date}}</h6>
+                       <h5 class="card-title">{{ $sight->title}}</h5>
+                         <div>
+                          {!! Str::limit($sight->extract, 110, '...') !!}
+                         </div>
+                         <p>Read more</p>
+                       </div>
+                  </div>
+                  </a>
+                     
+                @endforeach
+
+            </div>
+        </div>
     </div>
+
 @endsection
 @section('js')
 

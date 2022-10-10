@@ -94,9 +94,11 @@ class SightController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Sight $sight)
     {
-        return view('admin.sights.edit');
+        $categories = Category::all();
+        $destinations = Destination::all();
+        return view('admin.sights.edit',compact('destinations','categories','sight'));
     }
 
     /**
@@ -106,9 +108,43 @@ class SightController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Sight $sight)
     {
-        //
+             $request->validate([
+            
+                'title' => 'required',
+                 'extract' => 'required',
+                 'body' => 'required',
+                 'date' => 'required',
+                 'destination_id' => 'required',
+                 'subregion_id' => 'required',
+                 'country_id' => 'required',
+                 'category_id' => 'required',
+                 'image' => 'required',
+                 'caption' => 'required',
+                  'latitud' => 'required',
+                 'longitud' => 'required',
+          ]);
+        if($request->hasFile('image')){
+            unlink(storage_path('app/public/sights/'.$sight->image));
+            $request->image->store('sights', 'public');
+            $sight->image = $request->image->hashName();
+        }
+        $sight->title = $request->title;
+        $sight->slug = Str::slug($request->title);
+        $sight->extract = $request->extract;
+        $sight->body = $request->body;
+        $sight->date = $request->date;
+        $sight->destination_id = $request->destination_id;
+        $sight->subregion_id = $request->subregion_id;
+        $sight->country_id = $request->country_id;
+        $sight->category_id = $request->category_id;
+        $sight->caption = $request->caption;
+        $sight->latitud = $request->latitud;
+        $sight->longitud = $request->longitud;
+        $sight->zoom = $request->zoom;
+        $sight->update();
+        return redirect()->route('admin.sights.index')->with('message','Sight updated') ;
     }
 
     /**
@@ -117,8 +153,13 @@ class SightController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Sight $sight)
     {
-        //
+        if(file_exists(storage_path('app/public/sights/'.$sight->image))){
+            unlink(storage_path('app/public/sights/'.$sight->image));
+
+        }
+        $sight->delete();
+        return redirect()->route('admin.sights.index')->with('message','Sight eliminado');
     }
 }

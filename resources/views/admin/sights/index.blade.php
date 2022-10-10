@@ -63,12 +63,12 @@
                                 </a>
                         </td>
                         <td>
-                            <a href="" class="btn btn-warning btn-sm">
+                            <a href="{{ route('admin.sights.edit',$sight)}}" class="btn btn-warning btn-sm">
                                 <i class="bi bi-pencil-square"></i>
                             </a>
                         </td>
                         <td>
-                            <form action="" method="post">
+                            <form action="{{ route('admin.sights.destroy',$sight)}}" method="post">
                                 @csrf
                                 @method('delete')
                                 <button type="submit" class="btn btn-danger btn-sm show_confirm">
