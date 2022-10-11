@@ -24,4 +24,7 @@ class FrontController extends Controller
     public function sight(Sight $sight){
         return view('frontend.sight',compact('sight'));
     }
+    public function taylor(){
+        return view('frontend.taylor');
+    }
 }
