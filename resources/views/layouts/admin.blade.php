@@ -91,11 +91,36 @@
                                     </a>
                                   </li>
                                 </ul>
-                            </li
+                              </li>
                             <li class="nav-item">
                               <a class="nav-link" href="{{ route('admin.sights.index')}}">
                                   {{ __('Sights') }}
                               </a>
+                            </li>
+                            <li class="nav-item dropdown">
+                              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Contactos
+                              </a>
+                              <ul class="dropdown-menu">
+                                <li><a class="nav-link" href="{{ route('contactos.general.index')}}">
+                                  {{ __('General') }}
+                              </a>
+                            </li>
+                                <li> <a class="nav-link" href="">
+                                 
+                              </a></li>
+                                
+                                <li>
+                                  <a class="nav-link" href="">
+                                    
+                                  </a>
+                                </li>
+                                <li>
+                                  <a class="nav-link" href="">
+                                      
+                                  </a>
+                                </li>
+                              </ul>
                             </li>
                     </ul>
 

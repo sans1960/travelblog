@@ -78,7 +78,7 @@
         <div class="col-md-6 mx-auto">
             <h1>Welcome</h1>
             <p>We believe that trips should be as individual as you, where every detail counts for a unique experience. This is the essence of our business.</p>
-            <a href="" class="btn btn-outline-dark mb-5">Tailor-made trips</a>
+            <a href="{{ route('taylor')}}" class="btn btn-outline-dark mb-5">Tailor-made trips</a>
             <h1 class="text-center mt-5">Our destinations</h1>
 
         </div>

@@ -24,7 +24,7 @@
             <p class="fw-bold" style="text-align: justify;">The same trip to the same destination can have an infinite number of different approaches with a wide range of possibilities.</p>
             <p class="fw-bold" style="text-align: justify;">If you are interested in hiring our services, we can start.</p>
             <div class="d-flex justify-content-center mt-5">
-                <a href="" class="btn  btn-outline-dark">Start to plan my trip</a>
+                <a href="{{ route('contactgeneral')}}" class="btn  btn-outline-dark">Start to plan my trip</a>
             </div>
         </div>
     </div>
@@ -45,7 +45,7 @@
             <p class="fw-bold" style="text-align: justify;">It does not matter if the trip is for a week or even more than a month, since our best service is to offer the client a vacation where they do not have to worry about anything, knowing at all times what they are going to see or do, and supported with all the graphic material necessary to obtain the best possible experience.</p>
             
             <div class="d-flex justify-content-center mt-5">
-                <a href="" class="btn  btn-outline-dark">Start to plan my trip</a>
+                <a href="{{ route('contactgeneral')}}" class="btn  btn-outline-dark">Start to plan my trip</a>
             </div>
         </div>
     </div>
@@ -71,7 +71,7 @@
             <li>Map and directions for each day of the itinerary.</li>
           </ul>
           <div class="d-flex justify-content-center mt-5">
-            <a href="" class="btn  btn-outline-dark">Start to plan my trip</a>
+            <a href="{{ route('contactgeneral')}}" class="btn  btn-outline-dark">Start to plan my trip</a>
         </div>
         </div>
     </div>

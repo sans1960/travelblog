@@ -11,6 +11,7 @@ use App\Http\Controllers\Admin\TagController;
 use App\Http\Controllers\Admin\PageController;
 use App\Http\Controllers\Admin\ArticleController;
 use App\Http\Controllers\Admin\SightController;
+use App\Http\Controllers\Admin\GeneralContactController;
 
 
 
@@ -30,6 +31,7 @@ Route::get('/destinations/{destination}', [FrontController::class , 'destination
 Route::get('/pages/{page}', [FrontController::class , 'page'])->name('page');
 Route::get('/sights/{sight}', [FrontController::class , 'sight'])->name('sight');
 Route::get('taylor-made-trips', [FrontController::class , 'taylor'])->name('taylor');
+Route::get('taylor-made-trips/contact', [FrontController::class , 'contactgeneral'])->name('contactgeneral');
 
 Auth::routes();
 
@@ -44,6 +46,7 @@ Route::resource('admin/tags',TagController::class)->middleware('auth')->names('a
 Route::resource('admin/pages',PageController::class)->middleware('auth')->names('admin.pages');
 Route::resource('admin/articles',ArticleController::class)->middleware('auth')->names('admin.articles');
 Route::resource('admin/sights',SightController::class)->middleware('auth')->names('admin.sights');
+Route::resource('admin/contactos-general',GeneralContactController::class)->names('contactos.general');
 
 
 Route::get('get-subregions',[CountryController::class,'getSubregions'])->name('getsubregions');

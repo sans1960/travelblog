@@ -27,4 +27,7 @@ class FrontController extends Controller
     public function taylor(){
         return view('frontend.taylor');
     }
+    public function contactgeneral(){
+        return view('forms.general');
+    }
 }
