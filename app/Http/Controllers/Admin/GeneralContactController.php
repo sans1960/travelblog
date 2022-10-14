@@ -65,7 +65,8 @@ class GeneralContactController extends Controller
      */
     public function show($id)
     {
-        //
+        $contact = GeneralContact::where('id',$id)->get();
+        return view('admin.contactosGeneral.show',compact('contact'));
     }
 
     /**
@@ -99,6 +100,8 @@ class GeneralContactController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $contact = GeneralContact::find($id);
+        $contact->delete();
+        return redirect()->route('contactos.general.index');
     }
 }

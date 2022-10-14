@@ -44,13 +44,13 @@
                         <td>{{ $contact->surname}}</td>
                         <td>{{ $contact->email}}</td>
                         <td>
-                            <a href="" class="btn btn-success btn-sm">
+                            <a href="{{route('contactos.general.show',$contact->id)}}" class="btn btn-success btn-sm">
                                 <i class="bi bi-eye"></i>
                                 </a>
                         </td>
                       
                         <td>
-                            <form action="" method="post">
+                            <form action="{{route('contactos.general.destroy',$contact->id)}}" method="post">
                                 @csrf
                                 @method('delete')
                                 <button type="submit" class="btn btn-danger btn-sm show_confirm">
