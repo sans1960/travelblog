@@ -32,6 +32,7 @@ Route::get('/pages/{page}', [FrontController::class , 'page'])->name('page');
 Route::get('/sights/{sight}', [FrontController::class , 'sight'])->name('sight');
 Route::get('taylor-made-trips', [FrontController::class , 'taylor'])->name('taylor');
 Route::get('taylor-made-trips/contact', [FrontController::class , 'contactgeneral'])->name('contactgeneral');
+Route::get('contact/destination/{destination}', [FrontController::class , 'contactDestination'])->name('contactdestination');
 
 Auth::routes();
 

@@ -17,6 +17,8 @@
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
    <link rel="stylesheet" href="{{ asset('css/owl.theme.default.min.css') }}">
    <link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css') }}">
+   <
+
    @yield('estilo')
 </head>
 <body>
@@ -68,6 +70,7 @@
     <script src="{{ asset('js/bootstrap.bundle.min.js')}}"></script>
     <script src="{{ asset('js/jquery.js') }}"></script>
     <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
+  
     @yield('js')
 </body>
 </html>

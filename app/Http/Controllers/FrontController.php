@@ -30,4 +30,7 @@ class FrontController extends Controller
     public function contactgeneral(){
         return view('forms.general');
     }
+    public function contactDestination(Destination $destination){
+        return view('forms.destination',compact('destination'));
+    }
 }
