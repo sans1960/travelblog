@@ -15,6 +15,25 @@ return new class extends Migration
     {
         Schema::create('destination_contacts', function (Blueprint $table) {
             $table->id();
+            $table->string('trait')->nullable();
+            $table->string('name');
+            $table->string('destination');
+            $table->string('surname');
+            $table->string('phone');
+            $table->string('email');
+            $table->string('city');
+            $table->string('legal');
+            $table->string('state');
+            $table->string('zipcode')->nullable();
+            $table->string('duration')->nullable();
+            $table->string('season')->nullable();
+            $table->string('travelers')->nullable();
+            $table->string('children')->nullable();
+            $table->string('type')->nullable();
+            $table->string('romantic')->nullable();
+            $table->string('mobility')->nullable();
+            $table->json('countries')->nullable();
+            $table->text('message')->nullable();
             $table->timestamps();
         });
     }
