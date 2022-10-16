@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\DestinationContact;
 
 class DestinationContactController extends Controller
 {
@@ -20,7 +21,8 @@ class DestinationContactController extends Controller
      */
     public function index()
     {
-        //
+        $destinationcontacts = DestinationContact::all();
+        return view('admin.contactosDestino.index',compact('destinationcontacts'));
     }
 
     /**
@@ -41,7 +43,8 @@ class DestinationContactController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->all());
+        $contact = DestinationContact::create($request->all());
+        return view('forms.respuesta',compact('contact'));
     }
 
     /**
@@ -52,7 +55,8 @@ class DestinationContactController extends Controller
      */
     public function show($id)
     {
-        //
+        $contact = DestinationContact::where('id',$id)->get();
+        return view('admin.contactosDestino.show',compact('contact'));
     }
 
     /**
@@ -86,6 +90,8 @@ class DestinationContactController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $contact = DestinationContact::find($id);
+        $contact->delete();
+        return redirect()->route('contactos.destination.index');
     }
 }

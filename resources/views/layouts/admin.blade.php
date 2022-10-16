@@ -106,8 +106,8 @@
                                   {{ __('General') }}
                               </a>
                             </li>
-                                <li> <a class="nav-link" href="">
-                                 
+                                <li> <a class="nav-link" href="{{ route('contactos.destination.index')}}">
+                                  {{ __('Destination') }}
                               </a></li>
                                 
                                 <li>
