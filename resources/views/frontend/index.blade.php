@@ -100,10 +100,14 @@
             <div class="col-md-6 mx-auto">
                 <h1 class="text-center">Subscribe</h1>
                 <p class="text-center">Sign up to hear from us about specials, news and promotions.</p>
-                <form action="" method="post">
+                <form action="{{ route('contactos.list.store')}}" method="post">
+                    @csrf
                     <div class="form-floating mb-3">
-                        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                        <input type="email" class="form-control" name="email" id="floatingInput" placeholder="name@example.com" required>
                         <label for="floatingInput">Email address</label>
+                        @error('email')
+                <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
                       </div>
                       <div class="d-flex justify-content-center">
                          <button type="submit" class="btn btn-outline-dark">Sign up</button>

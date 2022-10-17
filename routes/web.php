@@ -13,6 +13,8 @@ use App\Http\Controllers\Admin\ArticleController;
 use App\Http\Controllers\Admin\SightController;
 use App\Http\Controllers\Admin\GeneralContactController;
 use App\Http\Controllers\Admin\DestinationContactController;
+use App\Http\Controllers\Admin\ListContactController;
+
 
 
 
@@ -50,6 +52,7 @@ Route::resource('admin/articles',ArticleController::class)->middleware('auth')->
 Route::resource('admin/sights',SightController::class)->middleware('auth')->names('admin.sights');
 Route::resource('admin/contactos-general',GeneralContactController::class)->names('contactos.general');
 Route::resource('admin/contactos-destinations',DestinationContactController::class)->names('contactos.destination');
+Route::resource('admin/contactos-list',ListContactController::class)->names('contactos.list');
 
 
 Route::get('get-subregions',[CountryController::class,'getSubregions'])->name('getsubregions');
