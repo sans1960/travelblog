@@ -116,8 +116,8 @@
                                   </a>
                                 </li>
                                 <li>
-                                  <a class="nav-link" href="">
-                                      
+                                  <a class="nav-link" href="{{ route('contactos.page.index')}}">
+                                    {{ __('Paginas') }} 
                                   </a>
                                 </li>
                               </ul>

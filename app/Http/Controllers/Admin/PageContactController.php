@@ -4,9 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\DestinationContact;
+use App\Models\PageContact;
 
-class DestinationContactController extends Controller
+class PageContactController extends Controller
 {
     public function __construct()
     {
@@ -21,8 +21,8 @@ class DestinationContactController extends Controller
      */
     public function index()
     {
-        $destinationcontacts = DestinationContact::all();
-        return view('admin.contactosDestino.index',compact('destinationcontacts'));
+        $pagecontacts = PageContact::all();
+        return view('admin.contactosPage.index',compact('pagecontacts'));
     }
 
     /**
@@ -46,14 +46,14 @@ class DestinationContactController extends Controller
         $request->validate([
             'name'=>'required|max:20',
             'surname'=>'required|max:20',
-            'phone'=>'required|max:20',
+            'phone'=>'max:20',
             'email'=>'required|email',
-            'city'=>'required|max:20',
-            'state'=>'required|max:20',
+            'city'=>'max:20',
+            'state'=>'max:20',
             'zipcode'=>'max:20',
             'message'=>'max:255',
         ]);
-        $contact = DestinationContact::create($request->all());
+        $contact = PageContact::create($request->all());
         return view('forms.respuesta',compact('contact'));
     }
 
@@ -65,8 +65,8 @@ class DestinationContactController extends Controller
      */
     public function show($id)
     {
-        $contact = DestinationContact::where('id',$id)->get();
-        return view('admin.contactosDestino.show',compact('contact'));
+        $contact = PageContact::where('id',$id)->get();
+        return view('admin.contactosPage.show',compact('contact'));
     }
 
     /**
@@ -100,8 +100,8 @@ class DestinationContactController extends Controller
      */
     public function destroy($id)
     {
-        $contact = DestinationContact::find($id);
+        $contact = PageContact::find($id);
         $contact->delete();
-        return redirect()->route('contactos.destination.index');
+        return redirect()->route('contactos.page.index');
     }
 }

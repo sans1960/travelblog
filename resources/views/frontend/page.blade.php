@@ -52,7 +52,7 @@
 
             </h2>
                <div class="col-md-2 mx-auto ">
-                <a href="" class="btn btn-dark d-block p-2 mx-auto">Let's Go</a>
+                <a href="{{ route('contactpage',$page)}}" class="btn btn-dark d-block p-2 mx-auto">Let's Go</a>
                </div>
                
         </div>

@@ -14,6 +14,7 @@ use App\Http\Controllers\Admin\SightController;
 use App\Http\Controllers\Admin\GeneralContactController;
 use App\Http\Controllers\Admin\DestinationContactController;
 use App\Http\Controllers\Admin\ListContactController;
+use App\Http\Controllers\Admin\PageContactController;
 
 
 
@@ -36,6 +37,7 @@ Route::get('/sights/{sight}', [FrontController::class , 'sight'])->name('sight')
 Route::get('taylor-made-trips', [FrontController::class , 'taylor'])->name('taylor');
 Route::get('taylor-made-trips/contact', [FrontController::class , 'contactgeneral'])->name('contactgeneral');
 Route::get('contact/destination/{destination}', [FrontController::class , 'contactDestination'])->name('contactdestination');
+Route::get('contact/page/{page}', [FrontController::class , 'contactPage'])->name('contactpage');
 
 Auth::routes();
 
@@ -53,6 +55,7 @@ Route::resource('admin/sights',SightController::class)->middleware('auth')->name
 Route::resource('admin/contactos-general',GeneralContactController::class)->names('contactos.general');
 Route::resource('admin/contactos-destinations',DestinationContactController::class)->names('contactos.destination');
 Route::resource('admin/contactos-list',ListContactController::class)->names('contactos.list');
+Route::resource('admin/contactos-page',PageContactController::class)->names('contactos.page');
 
 
 Route::get('get-subregions',[CountryController::class,'getSubregions'])->name('getsubregions');
