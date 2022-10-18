@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Destination;
 use App\Models\Page;
 use App\Models\Sight;
+use App\Models\Country;
 
 class FrontController extends Controller
 {
@@ -22,7 +23,8 @@ class FrontController extends Controller
         return view('frontend.page',compact('page'));
     }
     public function sight(Sight $sight){
-        return view('frontend.sight',compact('sight'));
+        $sights = Sight::where('country_id',$sight->country_id)->where('id','<>',$sight->id)->get();
+        return view('frontend.sight',compact('sight','sights'));
     }
     public function taylor(){
         return view('frontend.taylor');
@@ -35,5 +37,10 @@ class FrontController extends Controller
     }
     public function contactPage(Page $page){
         return view('forms.page',compact('page'));
+    }
+    public function contactSight(Sight $sight){
+        $countries = Country::where('subregion_id',$sight->subregion_id)->where('id','<>',$sight->country_id)->get();
+        $items = Sight::where('country_id',$sight->country_id)->where('id','<>',$sight->id)->get();
+        return view('forms.sight',compact('sight','countries','items'));
     }
 }

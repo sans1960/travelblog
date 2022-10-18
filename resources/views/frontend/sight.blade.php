@@ -48,10 +48,63 @@
 
             </h2>
                <div class="col-md-2 mx-auto ">
-                <a href="" class="btn btn-dark d-block p-2 mx-auto">Plan a trip here</a>
+                <a href="{{ route('contactsight',$sight)}}" class="btn btn-dark d-block p-2 mx-auto">Plan a trip here</a>
                </div>
                
         </div>
+        <div class="row mt-5">
+          @if ($sights)
+              <h3 class="text-center">Relataded sights</h3>
+              <div class="col-md-6 mx-auto owl-carousel owl-theme mt-5">
+                @foreach ($sights as $sight)
+                <a href="{{ route('sight',$sight)}}" class="nav-link">
+                    <div class="card">
+                      <img src="{{ asset('storage/sights/'.$sight->image)}}" class="card-img-top" alt=".{{ $sight->caption}}">
+                     <div class="card-body">
+                       <h6 class="card-title">{{ $sight->date}}</h6>
+                       <h5 class="card-title">{{ $sight->title}}</h5>
+                         <div>
+                          {!! Str::limit($sight->extract, 110, '...') !!}
+                         </div>
+                         <p>Read more</p>
+                       </div>
+                  </div>
+                  </a>
+                     
+                @endforeach
+
+            </div>
+          @endif
+        </div>
     </div>
+
+@endsection
+@section('js')
+
+
+
+
+<script>
+    $('.owl-carousel').owlCarousel({
+    loop:true,
+    margin:10,
+    responsiveClass:true,
+    responsive:{
+        0:{
+            items:1,
+            nav:true
+        },
+        600:{
+            items:2,
+            nav:false
+        },
+        1000:{
+            items:3,
+            nav:true,
+            loop:false
+        }
+    }
+})
+</script>
 
 @endsection

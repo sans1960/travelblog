@@ -120,6 +120,11 @@
                                     {{ __('Paginas') }} 
                                   </a>
                                 </li>
+                                <li>
+                                  <a class="nav-link" href="{{ route('contactos.sight.index')}}">
+                                    {{ __('Sights') }} 
+                                  </a>
+                                </li>
                               </ul>
                             </li>
                     </ul>
