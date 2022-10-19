@@ -8,6 +8,6 @@
                 style="text-decoration: underline;"><b>Terms and Conditions</b></a></span>
         </label>
       </div>
-      <button type="submit" class="btn btn-dark mt-4">Send</button>
+      <button type="submit" class="btn btn-dark mt-4 mb-4">Send</button>
 
  </div>

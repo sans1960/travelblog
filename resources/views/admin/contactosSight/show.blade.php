@@ -77,10 +77,17 @@
                     {{$item->sight}}
                    </div>
                    <div>
-                    {{ implode(",",$item->countries)}}
+                    @foreach ($item->countries as $its)
+                        {{$its}}
+                    @endforeach
+                  
+                  
                    </div>
                    <div>
-                    {{ implode(",",$item->sights)}}
+                    @foreach ($item->sights as $it)
+                        {{$it}}
+                    @endforeach
+                    
                    </div>
                 </div>
               </div>

@@ -38,30 +38,33 @@
                     </tr>
                 </thead>
                 <tbody>
-                   @foreach ($sightcontacts as $sightcontact)
-                       <tr>
-                        <td>{{ $sightcontact->created_at}}</td>
-                        <td>{{ $sightcontact->sight}}</td>
-                        <td>{{ $sightcontact->country}}</td>
-                        <td>{{ $sightcontact->email}}</td>
-                     
-                        <td>
-                            <a href="{{ route('contactos.sight.show',$sightcontact->id)}}" class="btn btn-success btn-sm">
-                                <i class="bi bi-eye"></i>
-                                </a>
-                        </td>
-                      
-                        <td>
-                            <form action="{{ route('contactos.sight.destroy',$sightcontact->id)}}" method="post">
-                                @csrf
-                                @method('delete')
-                                <button type="submit" class="btn btn-danger btn-sm show_confirm">
-                                    <i class="bi bi-trash3"></i>
-                                </button>
-                            </form>
-                        </td>
-                       </tr>
-                   @endforeach
+                   
+                    @foreach ($sightcontacts as $sightcontact)
+                    <tr>
+                     <td>{{ $sightcontact->created_at}}</td>
+                     <td>{{ $sightcontact->sight}}</td>
+                     <td>{{ $sightcontact->country}}</td>
+                     <td>{{ $sightcontact->email}}</td>
+                  
+                     <td>
+                         <a href="{{ route('contactos.sight.show',$sightcontact->id)}}" class="btn btn-success btn-sm">
+                             <i class="bi bi-eye"></i>
+                             </a>
+                     </td>
+                   
+                     <td>
+                         <form action="{{ route('contactos.sight.destroy',$sightcontact->id)}}" method="post">
+                             @csrf
+                             @method('delete')
+                             <button type="submit" class="btn btn-danger btn-sm show_confirm">
+                                 <i class="bi bi-trash3"></i>
+                             </button>
+                         </form>
+                     </td>
+                    </tr>
+                @endforeach  
+                    
+                
                 </tbody>
             </table>
         </div>

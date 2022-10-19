@@ -17,7 +17,7 @@
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
    <link rel="stylesheet" href="{{ asset('css/owl.theme.default.min.css') }}">
    <link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css') }}">
-   <
+   
 
    @yield('estilo')
 </head>
@@ -27,7 +27,7 @@
     </div>
     @include('layouts.navbar',['destinations'=>$destinations=App\Models\Destination::all()])
   @yield('content')
-<footer class="bg-dark  mt-5">
+<footer class="bg-dark">
     <div class="container p-2">
         <div class="row">
             <div class="col-md-3 d-flex justify-content-center align-items-center">
