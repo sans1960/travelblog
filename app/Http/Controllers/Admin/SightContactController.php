@@ -21,8 +21,8 @@ class SightContactController extends Controller
      */
     public function index()
     {
-        $sightcontacts = SightContact::all();
-        return view('admin.contactosSight.index',compact('sightcontacts'));
+        $contacts = SightContact::all();
+        return view('admin.contactosSight.index',compact('contacts'));
     }
 
     /**
@@ -102,6 +102,7 @@ class SightContactController extends Controller
     {
         $contact = SightContact::find($id);
         $contact->delete();
-        return view('admin.contactosSight.index');
+
+        return redirect()->route('contactos.sight.index');
     }
 }

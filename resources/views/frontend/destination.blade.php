@@ -59,9 +59,9 @@
             <div class="col-md-6 mx-auto owl-carousel owl-theme">
                 @foreach ($sights as $sight)
                 <a href="{{ route('sight',$sight)}}" class="nav-link">
-                    <div class="card">
+                    <div class="card mb-5">
                       <img src="{{ asset('storage/sights/'.$sight->image)}}" class="card-img-top" alt=".{{ $sight->caption}}">
-                     <div class="card-body">
+                     <div class="card-body mb-5">
                        <h6 class="card-title">{{ $sight->date}}</h6>
                        <h5 class="card-title">{{ $sight->title}}</h5>
                          <div>

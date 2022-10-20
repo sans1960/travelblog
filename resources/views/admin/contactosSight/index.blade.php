@@ -39,21 +39,21 @@
                 </thead>
                 <tbody>
                    
-                    @foreach ($sightcontacts as $sightcontact)
+                    @foreach ($contacts as $contact)
                     <tr>
-                     <td>{{ $sightcontact->created_at}}</td>
-                     <td>{{ $sightcontact->sight}}</td>
-                     <td>{{ $sightcontact->country}}</td>
-                     <td>{{ $sightcontact->email}}</td>
+                     <td>{{ $contact->created_at}}</td>
+                     <td>{{ $contact->sight}}</td>
+                     <td>{{ $contact->country}}</td>
+                     <td>{{ $contact->email}}</td>
                   
                      <td>
-                         <a href="{{ route('contactos.sight.show',$sightcontact->id)}}" class="btn btn-success btn-sm">
+                         <a href="{{ route('contactos.sight.show',$contact->id)}}" class="btn btn-success btn-sm">
                              <i class="bi bi-eye"></i>
                              </a>
                      </td>
                    
                      <td>
-                         <form action="{{ route('contactos.sight.destroy',$sightcontact->id)}}" method="post">
+                         <form action="{{ route('contactos.sight.destroy',$contact->id)}}" method="post">
                              @csrf
                              @method('delete')
                              <button type="submit" class="btn btn-danger btn-sm show_confirm">

@@ -70,7 +70,7 @@
             <li>Suggestions for lunches and dinners.</li>
             <li>Map and directions for each day of the itinerary.</li>
           </ul>
-          <div class="d-flex justify-content-center mt-5">
+          <div class="d-flex justify-content-center mt-5 mb-5">
             <a href="{{ route('contactgeneral')}}" class="btn  btn-outline-dark">Start to plan my trip</a>
         </div>
         </div>

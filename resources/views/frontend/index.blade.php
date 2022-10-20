@@ -13,7 +13,7 @@
             
                 <div class="carousel-inner">
                   <div class="carousel-item active">
-                    <img src="https://cdn.pixabay.com/photo/2017/01/13/07/41/kyoto-1976538_960_720.jpg" class="d-block w-100" alt="...">
+                    <img src="{{ asset('img/architecture.jpg')}}" class="d-block w-100" alt="...">
                     <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100 ">
                       <h1 class="mb-5">The world is yours</h1>
                       <h5>We are specialists in tailor-made trips around the world.</h5>
@@ -21,7 +21,7 @@
                     </div>
                   </div>
                   <div class="carousel-item">
-                    <img src="https://cdn.pixabay.com/photo/2019/11/29/14/29/new-zealand-4661427_960_720.jpg" class="d-block w-100" alt="...">
+                    <img src="{{ asset('img/bora-bora.jpg')}}" class="d-block w-100" alt="...">
                     <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100">
                       <h1>We create unique trips.</h1>
                       <h5>Some representative placeholder content for the second slide.</h5>
@@ -29,7 +29,7 @@
                     </div>
                   </div>
                   <div class="carousel-item">
-                    <img src="https://cdn.pixabay.com/photo/2015/10/30/20/13/sunrise-1014712_960_720.jpg" class="d-block w-100" alt="...">
+                    <img src="{{ asset('img/lighthouse.jpg')}}" class="d-block w-100" alt="...">
                     <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100">
                       <h1>Third slide label</h1>
                       <h5>Some representative placeholder content for the third slide.</h5>
@@ -37,7 +37,7 @@
                     </div>
                   </div>
                   <div class="carousel-item">
-                    <img src="https://cdn.pixabay.com/photo/2015/10/30/20/13/sunrise-1014712_960_720.jpg" class="d-block w-100" alt="...">
+                    <img src="{{ asset('img/maldives.jpg')}}" class="d-block w-100" alt="...">
                     <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100">
                       <h1>Third slide label</h1>
                       <h5>Some representative placeholder content for the third slide.</h5>
@@ -45,21 +45,14 @@
                     </div>
                   </div>
                   <div class="carousel-item">
-                    <img src="https://cdn.pixabay.com/photo/2015/10/30/20/13/sunrise-1014712_960_720.jpg" class="d-block w-100" alt="...">
+                    <img src="{{ asset('img/woman.jpg')}}" class="d-block w-100" alt="...">
                     <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100">
                       <h1>Third slide label</h1>
                       <h5>Some representative placeholder content for the third slide.</h5>
                       <a href="" class="btn btn-dark">Start to plan my trip</a>
                     </div>
                   </div>
-                  <div class="carousel-item">
-                    <img src="https://cdn.pixabay.com/photo/2015/10/30/20/13/sunrise-1014712_960_720.jpg" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100">
-                      <h1>Third slide label</h1>
-                      <h5>Some representative placeholder content for the third slide.</h5>
-                      <a href="" class="btn btn-dark">Start to plan my trip</a>
-                    </div>
-                  </div>
+                 
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
                   <span class="carousel-control-prev-icon" aria-hidden="true"></span>
