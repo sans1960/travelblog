@@ -16,7 +16,7 @@ class FrontController extends Controller
         return view('frontend.index',compact('destinations','pages'));
     }
     public function destination(Destination $destination){
-        $sights = Sight::all();
+        $sights = Sight::where('destination_id',$destination->id)->get();
         return view('frontend.destination',compact('destination','sights'));
     }
     public function page(Page $page){

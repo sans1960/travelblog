@@ -3,7 +3,7 @@
     {{ $destination->name}}
 @endsection
 @section('estilo')
-
+<link rel="stylesheet" href="{{asset('css/lightbox.css')}}">
     
 @endsection
 @section('content')
@@ -22,7 +22,15 @@
     </div>
 <div class="container mt-5">
     <div class="row">
-        <div class="col-md-6 mx-auto owl-carousel owl-theme">
+        @foreach ($destination->imagedestination as $item)
+          <div class="col-md-3 mt-2">
+            <a href="{{ asset('storage/imagedestination/'.$item->image)}}"  data-lightbox="example-set" data-title="{{ $item->title}}">
+                <img src="{{ asset('storage/imagedestination/'.$item->image)}}" class="img-fluid">
+            </a>
+          </div>
+        @endforeach
+
+        {{-- <div class="col-md-6 mx-auto owl-carousel owl-theme">
             @foreach ($destination->imagedestination as $item)
                 <div class="card">
                     <img src="{{ asset('storage/imagedestination/'.$item->image)}}" class="card-img-top" alt=".{{ $item->caption}}">
@@ -34,7 +42,7 @@
                 
             @endforeach
 
-        </div>
+        </div> --}}
       
         
     </div>
@@ -80,8 +88,9 @@
 
 @endsection
 @section('js')
+<script src="{{ asset('js/lightbox.js')}}"></script>
 
-<script>
+{ <script>
      $('.owl-carousel').owlCarousel({
     loop:true,
     margin:10,
